@@ -2,7 +2,7 @@ package com.example.tests;
 
 import org.testng.annotations.Test;
 
-public class GroupCreationTests extends TestBase {
+public class NonEmptyGroupCreationTests extends TestBase {
   @Test
   public void testNonEmptyGroup—reation() throws Exception {
     openMainPage();
@@ -17,13 +17,4 @@ public class GroupCreationTests extends TestBase {
     returnToGroupsPage();
   }
   
-  @Test
-  public void testEmptyGroup—reation() throws Exception {
-    openMainPage();
-    gotoGroupsPage();
-    initGroupCreation();
-    fillGroupForm(new GroupData("", "", ""));
-    submitGroupCreation();
-    returnToGroupsPage();
-  }
 }
