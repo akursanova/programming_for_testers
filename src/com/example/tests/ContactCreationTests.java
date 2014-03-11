@@ -8,6 +8,9 @@ import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class ContactCreationTests {
   private WebDriver driver;
@@ -15,7 +18,7 @@ public class ContactCreationTests {
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
-  @Before
+  @BeforeTest
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
     baseUrl = "http://localhost/";
@@ -23,8 +26,8 @@ public class ContactCreationTests {
   }
 
   @Test
-  public void testKontaktcreation() throws Exception {
-    driver.get(baseUrl + "/addressbook/");
+  public void test—ontaÒt—reation() throws Exception {
+    driver.get(baseUrl + "addressbook/");
     driver.findElement(By.linkText("add new")).click();
     driver.findElement(By.name("firstname")).clear();
     driver.findElement(By.name("firstname")).sendKeys("vova");
@@ -57,7 +60,7 @@ public class ContactCreationTests {
     driver.findElement(By.linkText("home page")).click();
   }
 
-  @After
+  @AfterTest
   public void tearDown() throws Exception {
     driver.quit();
     String verificationErrorString = verificationErrors.toString();
