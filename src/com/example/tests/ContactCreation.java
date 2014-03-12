@@ -4,12 +4,12 @@ package com.example.tests;
 import org.testng.annotations.Test;
 
 @Test
-public class NonEmptyContactCreation extends TestBase {
+public class ContactCreation extends TestBase {
 
 
   public void test—ontaÒt—reation() throws Exception {
-    openMainPage();
-    gotonewContact();
+    app.navigationHelper.openMainPage();
+    app.contactHelper.gotonewContact();
     ContactParameters contact = new ContactParameters();
     contact.firstname = "firstname";
     contact.lastname = "lastname";
@@ -27,8 +27,8 @@ public class NonEmptyContactCreation extends TestBase {
     contact.address2 = "address2";
     contact.phone2 = "phone2";
     
-    fillFormContact(contact);
-    gotoHomePage();
+    app.contactHelper.fillFormContact(contact);
+    app.navigationHelper.gotoHomePage();
   }
   
 }

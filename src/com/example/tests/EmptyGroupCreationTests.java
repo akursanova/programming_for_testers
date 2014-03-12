@@ -6,11 +6,11 @@ public class EmptyGroupCreationTests extends TestBase {
   
   @Test
   public void testEmptyGroupCreation() throws Exception {
-    openMainPage();
-    gotoGroupsPage();
-    initGroupCreation();
-    fillGroupForm(new GroupData("", "", ""));
-    submitGroupCreation();
-    returnToGroupsPage();
+    app.navigationHelper.openMainPage();
+    app.groupHelper.gotoGroupsPage();
+    app.groupHelper.initGroupCreation();
+    app.groupHelper.fillGroupForm(new GroupData("", "", ""));
+    app.groupHelper.submitGroupCreation();
+    app.groupHelper.returnToGroupsPage();
   }
 }
