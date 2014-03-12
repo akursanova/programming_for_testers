@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class EmptyGroupCreationTests extends TestBase {
   
   @Test
-  public void testEmptyGroup—reation() throws Exception {
+  public void testEmptyGroupCreation() throws Exception {
     openMainPage();
     gotoGroupsPage();
     initGroupCreation();
