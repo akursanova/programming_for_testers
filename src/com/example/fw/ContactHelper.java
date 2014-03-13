@@ -3,7 +3,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import com.example.tests.ContactParameters;
 
-
 public class ContactHelper extends HelperBase  {
 
 	public ContactHelper(ApplicationManager manager) {
@@ -38,14 +37,13 @@ public class ContactHelper extends HelperBase  {
 	   driver.findElement(By.name("address2")).sendKeys(contact.address2);
 	   driver.findElement(By.name("phone2")).clear();
 	   driver.findElement(By.name("phone2")).sendKeys(contact.phone2);
-	   submitContactCreation();
-	}
+	   	}
 
 	public void submitContactCreation() {
 		driver.findElement(By.name("submit")).click();
 	}
 
-	public void gotonewContact() {
+	public void initNewContactCreation() {
 		driver.findElement(By.linkText("add new")).click();
 	}
 

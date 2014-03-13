@@ -11,7 +11,7 @@ public class NavigationHelper extends HelperBase {
 		driver.get(manager.baseUrl + "addressbook");
 	}
 
-	public void gotoHomePage() {
+	public void returnToHomePage() {
 		driver.findElement(By.linkText("home page")).click();
 	}
 

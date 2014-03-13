@@ -1,6 +1,6 @@
 package com.example.fw;
 import org.openqa.selenium.By;
-import com.example.tests.GroupData;
+import com.example.tests.GroupParameters;
 
 
 public class GroupHelper extends HelperBase  {
@@ -17,7 +17,7 @@ public class GroupHelper extends HelperBase  {
 		driver.findElement(By.name("submit")).click();
 	}
 
-	public void fillGroupForm(GroupData group) {
+	public void fillGroupForm(GroupParameters group) {
 		driver.findElement(By.name("group_name")).clear();
 	    driver.findElement(By.name("group_name")).sendKeys(group.name);
 	    driver.findElement(By.name("group_header")).clear();
