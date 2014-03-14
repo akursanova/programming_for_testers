@@ -16,7 +16,7 @@ public class ContactCreationTest extends TestBase {
     contact.firstname = "firstname";
     contact.lastname = "lastname";
     contact.address = "address";
-    contact.home = "home";
+    contact.homePhone = "home";
     contact.mobile = "mobile";
     contact.work = "work";
     contact.second_home = "second_home";

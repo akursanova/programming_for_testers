@@ -4,7 +4,7 @@ public class ContactParameters {
 	public String firstname;
 	public String lastname;
 	public String address;
-	public String home;
+	public String homePhone;
 	public String mobile;
 	public String work;
 	public String second_home;

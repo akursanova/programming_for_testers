@@ -2,7 +2,6 @@ package com.example.fw;
 import org.openqa.selenium.By;
 import com.example.tests.GroupParameters;
 
-
 public class GroupHelper extends HelperBase  {
 
 	public GroupHelper(ApplicationManager manager) {
@@ -10,28 +9,25 @@ public class GroupHelper extends HelperBase  {
 		}
 
 	public void initGroupCreation() {
-		driver.findElement(By.name("new")).click();
+		click(By.name("new"));
 	}
 
 	public void submitGroupCreation() {
-		driver.findElement(By.name("submit")).click();
+		click(By.name("submit"));
 	}
 
 	public void fillGroupForm(GroupParameters group) {
-		driver.findElement(By.name("group_name")).clear();
-	    driver.findElement(By.name("group_name")).sendKeys(group.name);
-	    driver.findElement(By.name("group_header")).clear();
-	    driver.findElement(By.name("group_header")).sendKeys(group.header);
-	    driver.findElement(By.name("group_footer")).clear();
-	    driver.findElement(By.name("group_footer")).sendKeys(group.footer);
+		type(By.name("group_name"), group.name);
+		type(By.name("group_header"), group.header);
+		type(By.name("group_footer"), group.footer);
 	}
-	
+
 	public void gotoGroupsPage() {
-		driver.findElement(By.linkText("groups")).click();
+		click(By.linkText("groups"));
 	}
 
 	public void returnToGroupsPage() {
-		driver.findElement(By.linkText("group page")).click();
+		click(By.linkText("group page"));
 	}
 
 }
