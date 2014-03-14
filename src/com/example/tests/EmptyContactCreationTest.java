@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 @Test
 public class EmptyContactCreationTest extends TestBase  {
 	
-	  public void testEmptyÑontañtÑreation() throws Exception {
+	  public void testEmptyContañtCreation() throws Exception {
 		    app.getNavigationHelper().openMainPage();
 		    app.getContactHelper().initNewContactCreation();
 		    app.getContactHelper().submitContactCreation();
