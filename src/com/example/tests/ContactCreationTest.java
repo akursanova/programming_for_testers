@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class ContactCreationTest extends TestBase {
 
 
-  public void test—ontaÒt—reation() throws Exception {
+  public void testContactCreation() throws Exception {
 	  
 	app.getNavigationHelper().openMainPage();
 	app.getContactHelper().initNewContactCreation();
