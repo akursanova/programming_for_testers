@@ -16,7 +16,10 @@ public class EmptyGroupCreationTest extends TestBase {
     List<GroupParameters> oldList =  app.getGroupHelper().getGroups();
     
     //actions
-    GroupParameters group = new GroupParameters("", "", "");
+    GroupParameters group = new GroupParameters();
+    group.name = "";
+    group.header = "";
+    group.footer = "";
     app.getGroupHelper().initGroupCreation();
 
 	app.getGroupHelper().fillGroupForm(group);

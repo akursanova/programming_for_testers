@@ -11,7 +11,8 @@ public class GroupParameters implements Comparable<GroupParameters> {
 
 	@Override
 	public String toString() {
-		return "GroupParameters [name=" + name + "]";
+		return "GroupParameters [groupname=" + name + ", header=" + header
+				+ ", footer=" + footer + "]";
 	}
 
 

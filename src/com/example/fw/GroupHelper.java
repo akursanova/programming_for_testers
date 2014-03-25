@@ -35,9 +35,10 @@ public class GroupHelper extends HelperBase  {
 		click(By.linkText("group page"));
 	}
 
-	public void deleteGroup(int index) {
+	public int deleteGroup(int index) {
 		selectGroupByIndex(index);
 		click(By.name("delete"));
+		return index;
 				
 	}
 
