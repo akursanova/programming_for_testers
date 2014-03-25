@@ -34,7 +34,6 @@ public class ContactHelper extends HelperBase  {
 		public void initNewContactCreation() {
 		click(By.linkText("add new"));
 	}
-
 		
 		public void initContactModification(int index) {
 			click(By.xpath("//a[contains(@href,'edit.php?id=')]["+ index +"]"));

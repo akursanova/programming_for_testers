@@ -12,5 +12,4 @@ public class GroupRemovalTest extends TestBase {
 	    app.getGroupHelper().returnToGroupsPage();
 		
 	}
-
 }
