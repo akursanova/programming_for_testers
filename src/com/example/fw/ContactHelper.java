@@ -37,15 +37,8 @@ public class ContactHelper extends HelperBase  {
 
 		
 		public void initContactModification(int index) {
-			selectContactByIndex(index-1);
-			click(By.xpath("//tr[" + index + "]/td[7]/a/img[@alt='Edit']"));
+			click(By.xpath("//a[contains(@href,'edit.php?id=')]["+ index +"]"));
 
-		}
-
-		private void selectContactByIndex(int index) {
-			click(By.xpath("//input[@name='selected[]'][" + index +"]"));
-		
-			
 		}
 		
 		public void submitContactModification() {
@@ -53,7 +46,7 @@ public class ContactHelper extends HelperBase  {
 			
 		}
 		
-		public void deleteContact(int index) {
+		public void deleteContact() {
 			click(By.xpath("//input[@value='Delete']"));
 
 		}

@@ -10,8 +10,8 @@ public class GroupModificationTest extends TestBase {
 	    app.getGroupHelper().gotoGroupsPage();
 		app.getGroupHelper().initGroupModification(1);
 		GroupParameters group = new GroupParameters();
+		group.name="new group name";
 		app.getGroupHelper().fillGroupForm(group);
-		group.name="new name";
 		app.getGroupHelper().submitGroupModification();
 	    app.getGroupHelper().returnToGroupsPage();	
 	
