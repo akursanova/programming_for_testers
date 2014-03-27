@@ -6,8 +6,10 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class GroupCreationTest extends TestBase {
-  @Test
-  public void testNonEmptyGroupCreation() throws Exception {
+	
+
+	@Test(dataProvider = "randomValidGroupGenerator")
+    public void testGroupCreationWithValidData(GroupParameters group) throws Exception {
     app.getNavigationHelper().openMainPage();
     app.getGroupHelper().gotoGroupsPage();
     
@@ -16,10 +18,6 @@ public class GroupCreationTest extends TestBase {
     
     // actions
     app.getGroupHelper().initGroupCreation();
-    GroupParameters group = new GroupParameters();
-    group.name = "Rob";
-    group.header = "group header 1";
-    group.footer = "group footer 1";
     app.getGroupHelper().fillGroupForm(group);
     app.getGroupHelper().submitGroupCreation();
     app.getGroupHelper().returnToGroupsPage();

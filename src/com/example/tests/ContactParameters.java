@@ -49,13 +49,29 @@ public class ContactParameters implements Comparable<ContactParameters> {
 				return false;
 		} else if (!firstname.equals(other.firstname))
 			return false;
+		
+		  if (lastname == null) {
+			   if (other.lastname != null)
+			    return false;
+			  } else if (!lastname.equals(other.lastname))
+			   return false;
+		
 		return true;
 	}
 
 
 	@Override
 	public int compareTo(ContactParameters other) {
-		return this.firstname.toLowerCase().compareTo(other.firstname.toLowerCase());
+		int firstnameCompare = this.firstname.toLowerCase().compareTo(other.firstname.toLowerCase());
+		int lastnameCompare = this.lastname.toLowerCase().compareTo(other.lastname.toLowerCase());
+		
+		if (lastnameCompare != 0 ) {
+			return lastnameCompare;
+		} else {
+			return firstnameCompare;
+		}
+		
+		 
 	}		
 	
 }
