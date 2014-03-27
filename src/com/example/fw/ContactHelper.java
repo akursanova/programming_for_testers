@@ -55,32 +55,11 @@ public class ContactHelper extends HelperBase  {
 
 		public List<ContactParameters> getContacts() {
 			List<ContactParameters> contacts = new ArrayList<ContactParameters>();
-			List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
-			for (WebElement checkbox : checkboxes) {
-				ContactParameters contact =new ContactParameters();
-				String title = checkbox.getAttribute("title");
-				String tempName = title.substring("Select (".length(), title.length()-")".length());
-				int i = tempName.indexOf(" ");
-				
-				if (tempName.length() <= 1) {
-					contact.firstname = "";
-					contact.lastname = "";	
-				}
-				else {	
-					if (i == 0) {
-						contact.firstname = "";
-						contact.lastname = tempName.substring(1);
-					}
-					if (i == tempName.length()) {
-						contact.lastname = "";
-						contact.firstname = tempName.substring(0,i);
-					}
-					else {			
-					contact.firstname = tempName.substring(0,i);
-					contact.lastname = tempName.substring(i+1);	
-					}
-		
-				}
+			List<WebElement> lines = driver.findElements(By.xpath("//tr[@name='entry']//td[2]"));
+			for (WebElement line : lines) {
+				ContactParameters contact = new ContactParameters();
+				String name = line.getText();
+				contact.lastname = name;
 				contacts.add(contact);
 			} 
 				return contacts;

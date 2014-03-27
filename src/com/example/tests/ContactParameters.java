@@ -23,7 +23,7 @@ public class ContactParameters implements Comparable<ContactParameters> {
 	
 	@Override
 	public String toString() {
-		return "ContactParameters [firstname=" + firstname + ",lastname=" + lastname + "]";
+		return "ContactParameters [lastname=" + lastname + "]";
 	}
 	
 	
@@ -44,11 +44,6 @@ public class ContactParameters implements Comparable<ContactParameters> {
 		if (getClass() != obj.getClass())
 			return false;
 		ContactParameters other = (ContactParameters) obj;
-		if (firstname == null) {
-			if (other.firstname != null)
-				return false;
-		} else if (!firstname.equals(other.firstname))
-			return false;
 		
 		  if (lastname == null) {
 			   if (other.lastname != null)
@@ -62,16 +57,8 @@ public class ContactParameters implements Comparable<ContactParameters> {
 
 	@Override
 	public int compareTo(ContactParameters other) {
-		int firstnameCompare = this.firstname.toLowerCase().compareTo(other.firstname.toLowerCase());
-		int lastnameCompare = this.lastname.toLowerCase().compareTo(other.lastname.toLowerCase());
-		
-		if (lastnameCompare != 0 ) {
-			return lastnameCompare;
-		} else {
-			return firstnameCompare;
-		}
-		
-		 
+				return this.lastname.toLowerCase().compareTo(other.lastname.toLowerCase());
+						 
 	}		
 	
 }
