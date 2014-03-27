@@ -4,19 +4,23 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import org.testng.annotations.Test;
 
 public class ContactRemovalTest extends TestBase {
 	
-	@Test
-	public void deleteSomeContact() {
+	@Test(dataProvider = "randomValidContactGenerator")
+	public void deleteSomeContact(ContactParameters contact) {
 		app.getNavigationHelper().openMainPage();
 		
 		 //save old state
 			List<ContactParameters> oldList =  app.getContactHelper().getContacts();
 			
-		app.getContactHelper().initContactModification(0);
+			Random rnd = new Random();
+		    int index = rnd.nextInt(oldList.size());
+			
+		app.getContactHelper().initContactModification(index+1);	
 		app.getContactHelper().deleteContact();
 	    app.getNavigationHelper().returnToHomePage();
 	    
@@ -24,7 +28,7 @@ public class ContactRemovalTest extends TestBase {
 	    List<ContactParameters> newList =  app.getContactHelper().getContacts();
 	    
 	    // compare states 
-	    oldList.remove(0);
+	    oldList.remove(index);
 	    Collections.sort(oldList);
 	    assertEquals(newList, oldList);
 	}
