@@ -15,15 +15,15 @@ public class GroupRemovalTest extends TestBase {
 	    //save old state
 	    List<GroupParameters> oldList =  app.getGroupHelper().getGroups();
 	    
-		int index = 0;
-		app.getGroupHelper().deleteGroup(index+1);
+		
+		app.getGroupHelper().deleteGroup(0);
 	    app.getGroupHelper().returnToGroupsPage();
 	    
 	    // save new state     
 	    List<GroupParameters> newList =  app.getGroupHelper().getGroups();
 	    
 	    // compare states  
-	    oldList.remove(index);
+	    oldList.remove(0);
 	    Collections.sort(oldList);
 	    assertEquals(newList, oldList);	 
 		

@@ -15,8 +15,8 @@ public class GroupModificationTest extends TestBase {
 	    //save old state
 	    List<GroupParameters> oldList =  app.getGroupHelper().getGroups();
 	    
-		int index = 0;
-		app.getGroupHelper().initGroupModification(index+1);
+		
+		app.getGroupHelper().initGroupModification(0);
 		GroupParameters group = new GroupParameters();
 		group.name="new group1111";
 		app.getGroupHelper().fillGroupForm(group);
@@ -27,8 +27,8 @@ public class GroupModificationTest extends TestBase {
 	    List<GroupParameters> newList =  app.getGroupHelper().getGroups();
 	    
 	    // compare states  
-	    oldList.remove(index);
-	    oldList.add(index,group);
+	    oldList.remove(0);
+	    oldList.add(0,group);
 	    Collections.sort(oldList);
 	    assertEquals(newList, oldList);	    
 	    

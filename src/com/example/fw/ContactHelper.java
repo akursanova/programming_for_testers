@@ -39,7 +39,7 @@ public class ContactHelper extends HelperBase  {
 	}
 		
 		public void initContactModification(int index) {
-			click(By.xpath("//a[contains(@href,'edit.php?id=')]["+ index +"]"));
+			click(By.xpath("//a[contains(@href,'edit.php?id=')]["+ (index+1) +"]"));
 
 		}
 		

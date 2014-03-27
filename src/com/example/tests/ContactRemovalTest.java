@@ -16,8 +16,7 @@ public class ContactRemovalTest extends TestBase {
 		 //save old state
 			List<ContactParameters> oldList =  app.getContactHelper().getContacts();
 			
-		int index = 1;	
-		app.getContactHelper().initContactModification(index);
+		app.getContactHelper().initContactModification(0);
 		app.getContactHelper().deleteContact();
 	    app.getNavigationHelper().returnToHomePage();
 	    
@@ -25,7 +24,7 @@ public class ContactRemovalTest extends TestBase {
 	    List<ContactParameters> newList =  app.getContactHelper().getContacts();
 	    
 	    // compare states 
-	    oldList.remove(index-1);
+	    oldList.remove(0);
 	    Collections.sort(oldList);
 	    assertEquals(newList, oldList);
 	}
