@@ -6,12 +6,15 @@ import org.openqa.selenium.WebElement;
 import com.example.tests.ContactParameters;
 
 public class ContactHelper extends HelperBase  {
+	
+	public static boolean CREATION = true;
+	public static boolean MODIFICATION = false;
 
 	public ContactHelper(ApplicationManager manager) {
 		super(manager);
 			}
 
-	public void fillFormContact(ContactParameters contact) {
+	public void fillFormContact(ContactParameters contact, boolean formType) {
 		type(By.name("firstname"),contact.firstname);
 		type(By.name("lastname"),contact.lastname);
 	    type(By.name("address"),contact.address);
@@ -24,7 +27,15 @@ public class ContactHelper extends HelperBase  {
 	    selectByText(By.name("bday"), contact.birthday);		   
 	    selectByText(By.name("bmonth"), contact.bmonth);	        
 	    type(By.name("byear"),contact.byear);
-	    //selectByText(By.name("new_group"), contact.some_group);	        
+	    if (formType == CREATION) {
+	    //selectByText(By.name("new_group"), contact.some_group);	 
+	    } else {
+	    	if (driver.findElements(By.name("new_group")).size() !=0) {
+	    		throw new Error("Group selector exists in contact modification form");
+	    	}
+	    }
+	    
+	    
 	    type(By.name("address2"),contact.address2);   
 	    type(By.name("phone2"),contact.phone2);
 

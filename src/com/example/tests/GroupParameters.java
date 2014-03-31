@@ -1,9 +1,9 @@
 package com.example.tests;
 
 public class GroupParameters implements Comparable<GroupParameters> {
-	public String name;
-	public String header;
-	public String footer;
+	private String name;
+	private String header;
+	private String footer;
 
 
 	public GroupParameters() {
@@ -42,9 +42,36 @@ public class GroupParameters implements Comparable<GroupParameters> {
 	}
 
 
+	public String getName() {
+		return name;
+	}
+
+	public String getHeader() {
+		return header;
+	}
+
+	public String getFooter() {
+		return footer;
+	}
+
 	@Override
 	public int compareTo(GroupParameters other) {
 		return this.name.toLowerCase().compareTo(other.name.toLowerCase());
+	}
+
+	public GroupParameters withName(String name) {
+		this.name = name;
+		return this;
+	}
+
+	public GroupParameters withHeader(String header) {
+		this.header = header;
+		return this;
+	}
+
+	public GroupParameters withFooter(String footer) {
+		this.footer = footer;
+		return this;
 	}		
 		
 }

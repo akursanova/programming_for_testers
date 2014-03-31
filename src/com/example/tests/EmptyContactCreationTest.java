@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class EmptyContactCreationTest extends TestBase  {
 	
 	  public void testEmptyContactCreation() throws Exception {
-		    app.getNavigationHelper().openMainPage();
+		    app.navigateTo().mainPage();
 			
 			 //save old state
 			List<ContactParameters> oldList =  app.getContactHelper().getContacts();
@@ -23,7 +23,7 @@ public class EmptyContactCreationTest extends TestBase  {
 			contact.lastname = "";
 		    app.getContactHelper().initNewContactCreation();
 		    app.getContactHelper().submitContactCreation();
-		    app.getNavigationHelper().returnToHomePage();
+		    app.navigateTo().returnToHomePage();
 		    
 		    // save new state  
 		    List<ContactParameters> newList =  app.getContactHelper().getContacts();
