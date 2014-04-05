@@ -17,10 +17,6 @@ public class NavigationHelper extends HelperBase {
 			return driver.findElements(By.id("maintable")).size() >0 ;
 	}
 
-	public void returnToHomePage() {
-		click(By.linkText("home"));
-	}
-
 	public void groupsPage() {
 		if ( ! onGroupsPage()) {
 			click(By.linkText("groups"));

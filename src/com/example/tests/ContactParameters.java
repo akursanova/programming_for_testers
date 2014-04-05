@@ -59,6 +59,11 @@ public class ContactParameters implements Comparable<ContactParameters> {
 	public int compareTo(ContactParameters other) {
 				return this.lastname.toLowerCase().compareTo(other.lastname.toLowerCase());
 						 
+	}
+
+	public ContactParameters withName(String lastname) {
+		this.lastname = lastname;
+		return this;
 	}		
 	
 }

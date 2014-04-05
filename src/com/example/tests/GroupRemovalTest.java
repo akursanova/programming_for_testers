@@ -1,9 +1,9 @@
 package com.example.tests;
-import com.example.utils.SortedListOf;
 import java.util.Random;
 import org.testng.annotations.Test;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.*;
+import com.example.utils.SortedListOf;
 
 public class GroupRemovalTest extends TestBase {
 	
