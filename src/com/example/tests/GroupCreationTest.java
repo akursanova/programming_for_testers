@@ -1,12 +1,24 @@
 package com.example.tests;
+import java.io.File;
+import java.io.IOException;
+import java.util.Iterator;
 import com.example.utils.SortedListOf;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import static com.example.tests.GroupDataGenerator.loadGroupsFromXmlFile;
+import static com.example.tests.GroupDataGenerator.loadGroupsFromCsvFile;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class GroupCreationTest extends TestBase {
 	
-	@Test(dataProvider = "randomValidGroupGenerator")
+	@DataProvider
+	public Iterator<Object[]> groupsFromFile() throws IOException {
+		return wrapGroupsForDataProvider(loadGroupsFromXmlFile(new File("groups.xml"))).iterator();
+	}
+
+
+	@Test(dataProvider = "groupsFromFile")
     public void testGroupCreationWithValidData(GroupParameters group) throws Exception {
     
     //save old state
