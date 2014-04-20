@@ -55,14 +55,138 @@ public class ContactParameters implements Comparable<ContactParameters> {
 	}
 
 
+
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public String getHomePhone() {
+		return homePhone;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public String getWork() {
+		return work;
+	}
+
+	public String getSecond_home() {
+		return second_home;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getEmail2() {
+		return email2;
+	}
+
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public String getBmonth() {
+		return bmonth;
+	}
+
+	public String getByear() {
+		return byear;
+	}
+
+	public String getAddress2() {
+		return address2;
+	}
+
+	public String getPhone2() {
+		return phone2;
+	}		
+	
+
 	@Override
 	public int compareTo(ContactParameters other) {
 				return this.lastname.toLowerCase().compareTo(other.lastname.toLowerCase());
 						 
 	}
-
-	public ContactParameters withName(String lastname) {
+	
+	public ContactParameters withFirstname(String firstname) {
+		this.firstname = firstname;
+		return this;
+	}
+	
+	public ContactParameters withLastname(String lastname) {
 		this.lastname = lastname;
+		return this;
+	}
+	
+	public ContactParameters withAddress(String address) {
+		this.address = address;
+		return this;
+	}
+
+	public ContactParameters withHomePhone(String homePhone) {
+		this.homePhone = homePhone;
+		return this;
+	}
+
+	public ContactParameters withMobile(String mobile) {
+		this.mobile = mobile;
+		return this;
+	}
+
+	public ContactParameters withWork(String work) {
+		this.work = work;
+		return this;
+	}
+	
+	public ContactParameters withSecond_home(String second_home) {
+		this.second_home = second_home;
+		return this;
+	}
+
+	public ContactParameters withEmail(String email) {
+		this.email = email;
+		return this;
+	}
+
+	public ContactParameters withEmail2(String email2) {
+		this.email2 = email2;
+		return this;
+	}
+
+	public ContactParameters withBirthday(String birthday) {
+		this.birthday = birthday;
+		return this;
+	}
+
+	public ContactParameters withBmonth(String bmonth) {
+		this.bmonth = bmonth;
+		return this;
+	}
+
+	public ContactParameters withByear(String byear) {
+		this.byear = byear;
+		return this;
+	}
+
+	public ContactParameters withAddress2(String address2) {
+		this.address2 = address2;
+		return this;
+	}
+
+	public ContactParameters withPhone2(String phone2) {
+		this.phone2 = phone2;
 		return this;
 	}		
 	

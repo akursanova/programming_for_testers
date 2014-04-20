@@ -37,7 +37,7 @@ public class ContactHelper extends HelperBase  {
 			WebElement firstName = line.findElement(By.xpath("./td[3]"));
 			contact.firstname = firstName.getText();
 							
-			cachedContacts.add(new ContactParameters().withName(contact.lastname));
+			cachedContacts.add(new ContactParameters().withLastname(contact.lastname));
 		} 
 	}
 
@@ -73,18 +73,19 @@ public class ContactHelper extends HelperBase  {
 	// ----------------------------------------------------------------------------------------------------
 	
 	public ContactHelper fillFormContact(ContactParameters contact, boolean formType) {
-		type(By.name("firstname"),contact.firstname);
-		type(By.name("lastname"),contact.lastname);
-	    type(By.name("address"),contact.address);
-	    type(By.name("home"),contact.homePhone);
-  	    type(By.name("mobile"),contact.mobile);
-	    type(By.name("work"),contact.work);    
-	    type(By.name("home"),contact.second_home);    
-	    type(By.name("email"),contact.email);	    
-	    type(By.name("email2"),contact.email2);	    
-	    selectByText(By.name("bday"), contact.birthday);		   
-	    selectByText(By.name("bmonth"), contact.bmonth);	        
-	    type(By.name("byear"),contact.byear);
+		
+		type(By.name("firstname"),contact.getFirstname());
+		type(By.name("lastname"),contact.getLastname());
+	    type(By.name("address"),contact.getAddress());
+	    type(By.name("home"),contact.getHomePhone());
+  	    type(By.name("mobile"),contact.getMobile());
+	    type(By.name("work"),contact.getWork());    
+	    type(By.name("home"),contact.getSecond_home());    
+	    type(By.name("email"),contact.getEmail());	    
+	    type(By.name("email2"),contact.getEmail2());	    
+	    //selectByText(By.name("bday"), contact.getBirthday());		   
+	    //selectByText(By.name("bmonth"), contact.getBmonth());	        
+	    type(By.name("byear"),contact.getByear());
 	    if (formType == CREATION) {
 	    //selectByText(By.name("new_group"), contact.some_group);	 
 	    } else {
@@ -94,8 +95,8 @@ public class ContactHelper extends HelperBase  {
 	    	
 	    }
 	    	    
-	    type(By.name("address2"),contact.address2);   
-	    type(By.name("phone2"),contact.phone2);
+	    type(By.name("address2"),contact.getAddress2());   
+	    type(By.name("phone2"),contact.getPhone2());
 	    return this;
 	    
 	   	}

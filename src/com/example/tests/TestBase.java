@@ -14,7 +14,7 @@ import org.testng.annotations.DataProvider;
 
 import com.example.fw.ApplicationManager;
 import static com.example.tests.GroupDataGenerator.generateRandomGroups;
-import static com.example.tests.GroupDataGenerator.generateRandomString;
+import static com.example.tests.ContactDataGenerator.generateRandomContacts;
 
 public class TestBase {
 
@@ -49,31 +49,18 @@ public class TestBase {
 	
 	@DataProvider
 	public Iterator<Object[]> randomValidContactGenerator() {
+		return wrapContactsForDataProvider(generateRandomContacts(5)).iterator();
 		
-		List<Object[]> list = new ArrayList<Object[]>();
-		for (int i = 0; i < 1; i++ ) {
-			ContactParameters contact = new ContactParameters();			
-			contact.firstname = generateRandomString();
-			contact.lastname = generateRandomString();
-			contact.address = generateRandomString();	
-			contact.homePhone = generateRandomString();
-			contact.mobile = generateRandomString();
-			contact.work = generateRandomString();	
-			contact.second_home = generateRandomString();
-			contact.email = generateRandomString();
-			contact.email2 = generateRandomString();
-			contact.birthday= generateRandomNumber(31);
-			//public String bmonth;
-			contact.byear= generateRandomNumber(2013);
-			//public String some_group;
-			contact.address2 = generateRandomString();
-			contact.phone2 = generateRandomString();			
-			list.add(new Object[]{contact});
-		}	
-		return list.iterator();
 	}
 	
-	  
+		public static List<Object[]> wrapContactsForDataProvider(List<ContactParameters> contacts) {
+			List<Object[]> list = new ArrayList<Object[]>();
+			for (ContactParameters contact : contacts) {
+				list.add(new Object[]{contact});
+			}
+		return list;
+	}
+			
 	  public String generateRandomNumber(int limit){
 		  Random rnd = new Random();
 		  int number = 1+rnd.nextInt(limit);
