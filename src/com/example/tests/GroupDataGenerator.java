@@ -1,4 +1,6 @@
 package com.example.tests;
+import static com.example.tests.GroupDataGenerator.generateRandomGroups;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -82,6 +84,8 @@ public class GroupDataGenerator {
 	}
 
 	public static List<GroupParameters> generateRandomGroups(int amount) {
+		
+		
 		List<GroupParameters> list = new ArrayList<GroupParameters>();
 		for (int i = 0; i < amount; i++ ) {
 			GroupParameters group = new GroupParameters()
