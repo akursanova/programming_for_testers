@@ -11,7 +11,7 @@ public class GroupModificationTest extends TestBase {
 	public void modifySomeGroup(GroupParameters group) {
 	    
 	    //save old state
-		SortedListOf<GroupParameters> oldList =  app.getGroupHelper().getGroups();
+		SortedListOf<GroupParameters> oldList =  app.getGroupHelper().getUiGroups();
 	    
 	    Random rnd = new Random();
 	    int index = rnd.nextInt(oldList.size());
@@ -19,7 +19,7 @@ public class GroupModificationTest extends TestBase {
 	    app.getGroupHelper().modifyGroup(index, group);
 	    
 	    // save new state     
-	    SortedListOf<GroupParameters> newList =  app.getGroupHelper().getGroups();
+	    SortedListOf<GroupParameters> newList =  app.getGroupHelper().getUiGroups();
 	    
 	    // compare states  
 	    assertThat(newList,equalTo(oldList.without(index).withAdded(group)));

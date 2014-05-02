@@ -3,13 +3,38 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.example.tests.ContactCreationTest">
+      <class name="com.example.tests.GroupModificationTest">
         <methods>
           <include name="tearDown"/>
+          <include name="modifySomeGroup" invocation-numbers="0 1 2 3 4"/>
           <include name="setUp"/>
-          <include name="testContactCreation"/>
+        </methods>
+      </class> <!-- com.example.tests.GroupModificationTest -->
+      <class name="com.example.tests.GroupCreationTest">
+        <methods>
+          <include name="testGroupCreationWithValidData" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.example.tests.GroupCreationTest -->
+      <class name="com.example.tests.ContactModificationTest">
+        <methods>
+          <include name="modifySomeContact" invocation-numbers="0 1 2 3 4"/>
+        </methods>
+      </class> <!-- com.example.tests.ContactModificationTest -->
+      <class name="com.example.tests.ContactCreationTest">
+        <methods>
+          <include name="testContactCreation" invocation-numbers="0 1 2"/>
         </methods>
       </class> <!-- com.example.tests.ContactCreationTest -->
+      <class name="com.example.tests.GroupRemovalTest">
+        <methods>
+          <include name="deleteSomeGroup"/>
+        </methods>
+      </class> <!-- com.example.tests.GroupRemovalTest -->
+      <class name="com.example.tests.ContactRemovalTest">
+        <methods>
+          <include name="deleteSomeContact" invocation-numbers="0 1 2 3 4"/>
+        </methods>
+      </class> <!-- com.example.tests.ContactRemovalTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

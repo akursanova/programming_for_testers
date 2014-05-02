@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import com.example.tests.ContactParameters;
 
-public class ContactHelper extends HelperBase  {
+public class ContactHelper extends WebDriverHelperBase  {
 	
 	public static boolean CREATION = true;
 	public static boolean MODIFICATION = false;
@@ -13,6 +13,7 @@ public class ContactHelper extends HelperBase  {
 	public ContactHelper(ApplicationManager manager) {
 		super(manager);
 			}
+	
 	private SortedListOf<ContactParameters> cachedContacts;
 	
 	public SortedListOf<ContactParameters> getContacts() {
