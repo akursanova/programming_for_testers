@@ -24,6 +24,7 @@ public class ApplicationManager {
 		this.properties = properties;
 		model = new ApplicationModel();
 		model.setGroups(getHibernateHelper().listGroups());
+		model.setContacts(getHibernateHelper().listContacts());
 		    
 	}
 	
