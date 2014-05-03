@@ -2,12 +2,14 @@ package com.example.fw;
 
 import java.util.List;
 
+import com.example.tests.ContactParameters;
 import com.example.tests.GroupParameters;
 import com.example.utils.SortedListOf;
 
 public class ApplicationModel {
 
 	private SortedListOf<GroupParameters> groups;
+	private SortedListOf<ContactParameters> contacts;
 	
 	public SortedListOf<GroupParameters> getGroups() {
 		return groups;
@@ -29,4 +31,24 @@ public class ApplicationModel {
 		
 	}
 	
+	public SortedListOf<ContactParameters> getContacts() {
+		return contacts;
+	}
+	
+	public void setContacts(List<ContactParameters> contacts) {
+		this.contacts = new SortedListOf<ContactParameters> (contacts);
+	}
+
+	public ApplicationModel addContact(ContactParameters contact) {
+		contacts.add(contact);
+		return this;
+	}
+
+	public ApplicationModel removeContact(int index) {
+		contacts.remove(index);
+		return this;
+		
+	}
+
+
 }
