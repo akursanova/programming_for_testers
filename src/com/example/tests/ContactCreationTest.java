@@ -35,8 +35,9 @@ public class ContactCreationTest extends TestBase {
     assertThat(newList,equalTo(oldList.withAdded(contact)));
     
        
-    assertThat(app.getModel().getContacts(), equalTo(app.getHibernateHelper().listContacts()));
-    //assertThat(app.getModel().getContacts(), equalTo(app.getContactHelper().getUiContacts()));
+    //assertThat(app.getModel().getContacts(), equalTo(app.getHibernateHelper().listContacts()));
+    assertThat(app.getModel().getContacts(), equalTo(app.getContactHelper().getUiContacts()));
+    assertThat(newList, equalTo(app.getHibernateHelper().listContacts()));
     
   }
   
