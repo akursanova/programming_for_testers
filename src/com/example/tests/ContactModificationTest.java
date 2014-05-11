@@ -25,7 +25,7 @@ public class ContactModificationTest extends TestBase {
     // compare states 
     assertThat(newList,equalTo(oldList.without(index).withAdded(contact)));
 		
-    //assertThat(app.getModel().getContacts(), equalTo(app.getHibernateHelper().listContacts()));
+    assertThat(app.getModel().getContacts(), equalTo(app.getHibernateHelper().listContacts()));
     //assertThat(app.getModel().getContacts(), equalTo(app.getContactHelper().getUiContacts()));
     
 	}
