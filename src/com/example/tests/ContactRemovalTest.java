@@ -13,7 +13,7 @@ public class ContactRemovalTest extends TestBase {
 		app.navigateTo().mainPage();
 		
 		 //save old state
-		SortedListOf<ContactParameters> oldList =  app.getContactHelper().getUiContacts();
+		SortedListOf<ContactParameters> oldList =  app.getModel().getContacts();
 			
 		Random rnd = new Random();
 		int index = rnd.nextInt(oldList.size());
@@ -21,10 +21,10 @@ public class ContactRemovalTest extends TestBase {
 		app.getContactHelper().deleteContact(index);
 	    
 	    // save new state  
-		SortedListOf<ContactParameters> newList =  app.getContactHelper().getUiContacts();
+		SortedListOf<ContactParameters> newList =  app.getModel().getContacts();
 	    
 	    // compare states 
-	    //assertThat(newList,equalTo(oldList.without(index)));
+	    assertThat(newList,equalTo(oldList.without(index)));
 	    
 	    //assertThat(app.getModel().getContacts(), equalTo(app.getHibernateHelper().listContacts()));
 	    //assertThat(app.getModel().getContacts(), equalTo(app.getContactHelper().getUiContacts()));
